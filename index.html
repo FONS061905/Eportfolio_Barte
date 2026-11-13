@@ -192,12 +192,6 @@
       margin-bottom: 20px; min-height: 20px;
     }
     #hRole { color: var(--green); }
-    #hRole::after {
-      content: '▋'; font-size: 11px;
-      animation: blink .85s step-end infinite;
-      color: var(--green); margin-left: 2px;
-    }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
     .hero-desc {
       font-size: 14.5px; color: var(--fg3);
       max-width: 400px; line-height: 1.78;
@@ -696,7 +690,7 @@
     <div class="snd" data-target="#about" data-label="About"></div>
     <div class="snd" data-target="#skills" data-label="Skills"></div>
     <div class="snd" data-target="#projects" data-label="Projects"></div>
-    <div class="snd" data-target="#journal" data-label="Journal"></div>
+    <div class="snd" data-target="#journal" data-label="Coursework"></div>
     <div class="snd" data-target="#contact" data-label="Contact"></div>
   </aside>
 
@@ -710,7 +704,7 @@
       <li><a href="#about"><span class="nav-n">01</span>About</a></li>
       <li><a href="#skills"><span class="nav-n">02</span>Skills</a></li>
       <li><a href="#projects"><span class="nav-n">03</span>Projects</a></li>
-      <li><a href="#journal"><span class="nav-n">04</span>Journal</a></li>
+      <li><a href="#journal"><span class="nav-n">04</span>Coursework</a></li>
       <li><a href="#contact"><span class="nav-n">05</span>Contact</a></li>
     </ul>
     <button id="burger" aria-label="Toggle menu" aria-expanded="false">
@@ -726,7 +720,7 @@
     <div class="mob-divider"></div>
     <li><a href="#projects" class="mob-link"><span class="mn">03</span>Projects</a></li>
     <div class="mob-divider"></div>
-    <li><a href="#journal" class="mob-link"><span class="mn">04</span>Journal</a></li>
+    <li><a href="#journal" class="mob-link"><span class="mn">04</span>Coursework</a></li>
     <div class="mob-divider"></div>
     <li><a href="#contact" class="mob-link"><span class="mn">05</span>Contact</a></li>
   </nav>
@@ -746,7 +740,7 @@
             <div class="h-clip"><span class="h-clip-i">Alfonso</span></div>
             <div class="h-clip"><span class="h-clip-i outline">Barte</span></div>
           </div>
-          <p class="hero-role"><span id="hRole">Web Developer</span></p>
+          <p class="hero-role"><span id="hRole">Full-Stack Developer</span></p>
           <p class="hero-desc">
             I’m Alfonso Rafael D. Barte, a fourth-year IT student from San Jose, Batangas,
             building practical web applications through collaborative projects and hands-on learning.
@@ -1044,10 +1038,11 @@
   <section id="journal">
     <div class="bnum">04</div>
     <div class="container">
-      <p class="sl">Learning Reflections</p>
+      <p class="sl">Coursework Archive</p>
       <h2 class="st"><span class="st-i">IT Journal</span></h2>
       <p class="section-intro">
-        Weekly reflections from my IT coursework during AY 2025–2026.
+        Weekly reflections from my IT coursework during AY 2025–2026, kept here as an academic archive.
+        Explore the Projects section for my applied development work.
       </p>
       <div class="journal-wrap">
 
@@ -1383,24 +1378,6 @@
         gsap.to(el, { x: 0, y: 0, duration: .55, ease: 'elastic.out(1.1,.4)' })
       );
     });
-
-    /* ── Typewriter ── */
-    const roles = ['Web Developer', 'Full-Stack Dev', 'IT Student', 'Problem Solver', 'SQL Developer'];
-    let ri = 0, ci = 0, del = false;
-    const roleEl = document.getElementById('hRole');
-    function typeRole() {
-      if (!roleEl) return;
-      const word = roles[ri];
-      if (!del) {
-        roleEl.textContent = word.slice(0, ++ci);
-        if (ci === word.length) { del = true; setTimeout(typeRole, 2100); return; }
-      } else {
-        roleEl.textContent = word.slice(0, --ci);
-        if (ci === 0) { del = false; ri = (ri + 1) % roles.length; }
-      }
-      setTimeout(typeRole, del ? 44 : 80);
-    }
-    setTimeout(typeRole, 2600);
 
     /* ── Back to top ── */
     gsap.set('#totop', { autoAlpha: 0, y: 8, pointerEvents: 'none' });
