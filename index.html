@@ -14,18 +14,18 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:    #0b0b0b;
-      --bg2:   #101010;
-      --bg3:   #161616;
-      --bg4:   #1c1c1c;
-      --fg:    #e4f5e6;
-      --fg2:   #9ec9a2;
-      --fg3:   #577a5a;
-      --green: #4ade80;
-      --gd:    #22c55e;
-      --glow:  rgba(74,222,128,.06);
-      --brd:   rgba(74,222,128,.09);
-      --brd2:  rgba(74,222,128,.18);
+      --bg:    #080d16;
+      --bg2:   #0d1422;
+      --bg3:   #121c2c;
+      --bg4:   #192538;
+      --fg:    #e5efff;
+      --fg2:   #a9c5e8;
+      --fg3:   #6482a8;
+      --green: #60a5fa;
+      --gd:    #3b82f6;
+      --glow:  rgba(96,165,250,.06);
+      --brd:   rgba(96,165,250,.10);
+      --brd2:  rgba(96,165,250,.22);
       --mono:  'IBM Plex Mono', monospace;
       --sans:  'Space Grotesk', sans-serif;
       --body:  'Inter', sans-serif;
@@ -60,14 +60,14 @@
     /* ── CURSOR ── */
     #cur {
       position: fixed; width: 28px; height: 28px;
-      border: 1.5px solid rgba(74,222,128,.38);
+      border: 1.5px solid rgba(96,165,250,.42);
       border-radius: 50%; pointer-events: none;
       z-index: 9998; transform: translate(-50%,-50%);
       transition: width .3s cubic-bezier(.25,1,.5,1),
                   height .3s, border-color .3s, background .3s;
       will-change: transform;
     }
-    #cur.hov { width: 52px; height: 52px; border-color: var(--green); background: rgba(74,222,128,.06); }
+    #cur.hov { width: 52px; height: 52px; border-color: var(--green); background: rgba(96,165,250,.08); }
     #cdot {
       position: fixed; width: 5px; height: 5px;
       background: var(--green); border-radius: 50%;
@@ -85,7 +85,7 @@
       border-bottom: 1px solid transparent;
     }
     #nav.on {
-      background: rgba(11,11,11,.92);
+      background: rgba(8,13,22,.94);
       backdrop-filter: blur(18px);
       border-bottom-color: var(--brd);
     }
@@ -124,7 +124,7 @@
     }
     .snd {
       width: 5px; height: 5px; border-radius: 50%;
-      background: rgba(74,222,128,.25); cursor: none;
+      background: rgba(96,165,250,.28); cursor: none;
       transition: background .3s, transform .3s;
       position: relative;
     }
@@ -170,8 +170,8 @@
       animation: pdot 2.2s ease-in-out infinite;
     }
     @keyframes pdot {
-      0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(74,222,128,.4); }
-      50%      { opacity:.6; box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+      0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(96,165,250,.45); }
+      50%      { opacity:.6; box-shadow: 0 0 0 6px rgba(96,165,250,0); }
     }
     .hero-name { margin-bottom: 24px; }
     .h-clip { overflow: hidden; }
@@ -236,7 +236,7 @@
     .cb-dot { width: 10px; height: 10px; border-radius: 50%; }
     .cb-dot.r { background: #ff5f57; }
     .cb-dot.y { background: #febc2e; }
-    .cb-dot.g { background: #28c840; }
+    .cb-dot.g { background: #60a5fa; }
     .cb-file {
       font-family: var(--mono); font-size: 10.5px;
       color: var(--fg3); margin-left: 10px; opacity: .7;
@@ -255,8 +255,8 @@
     }
     .ck  { color: #c678dd; }   /* keyword — purple  */
     .cv  { color: #e5c07b; }   /* variable — amber  */
-    .cp  { color: var(--green); } /* property — green */
-    .cs  { color: #98c379; }   /* string  — lime    */
+    .cp  { color: var(--green); } /* property — blue accent */
+    .cs  { color: #9ecbff; }   /* string  — blue    */
     .cc  { color: #5c6370; font-style: italic; } /* comment */
     .cx  { color: #abb2bf; }   /* default            */
 
@@ -272,7 +272,7 @@
     }
     .scroll-mouse {
       width: 22px; height: 36px;
-      border: 1.5px solid rgba(74,222,128,.22);
+      border: 1.5px solid rgba(96,165,250,.25);
       border-radius: 11px;
       display: flex; align-items: flex-start; justify-content: center;
       padding-top: 5px;
@@ -337,7 +337,7 @@
     .bnum {
       position: absolute; right: var(--g); top: clamp(24px, 4vw, 52px);
       font-family: var(--sans); font-size: clamp(100px, 16vw, 240px);
-      font-weight: 700; color: rgba(74,222,128,.02);
+      font-weight: 700; color: rgba(96,165,250,.025);
       line-height: 1; letter-spacing: -.06em;
       pointer-events: none; user-select: none; z-index: 0;
     }
@@ -421,6 +421,37 @@
     }
     .skill-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 8px; }
     .skill-card p { font-size: 12.5px; color: var(--fg3); line-height: 1.62; }
+    .learning-plan {
+      margin-top: 40px; padding: 28px;
+      border: 1px solid var(--brd2); border-radius: var(--r);
+      background: linear-gradient(135deg, rgba(96,165,250,.06), transparent 60%);
+      position: relative; z-index: 1;
+    }
+    .learning-plan h3 {
+      font-family: var(--sans); font-size: 20px;
+      font-weight: 600; margin-bottom: 8px;
+    }
+    .learning-plan > p {
+      font-size: 13px; color: var(--fg3); line-height: 1.7;
+      max-width: 620px; margin-bottom: 20px;
+    }
+    .learning-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+    }
+    .learning-item {
+      padding: 16px; border: 1px solid var(--brd);
+      border-radius: 6px; background: rgba(8,13,22,.62);
+    }
+    .learning-item span {
+      display: block; font-family: var(--mono); font-size: 8px;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--green); margin-bottom: 7px;
+    }
+    .learning-item h4 {
+      font-family: var(--sans); font-size: 13px;
+      font-weight: 600; margin-bottom: 5px;
+    }
+    .learning-item p { font-size: 11.5px; color: var(--fg3); line-height: 1.6; }
 
     /* ── PROJECTS ── */
     #projects { background: var(--bg2); }
@@ -479,18 +510,18 @@
       z-index: 1;
     }
     .journal-entry:hover .j-dot {
-      border-color: var(--green); background: rgba(74,222,128,.1);
+      border-color: var(--green); background: rgba(96,165,250,.12);
     }
     .j-meta {
       display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
     }
     .entry-tag {
       display: inline-block;
-      background: rgba(74,222,128,.07); color: var(--green);
+      background: rgba(96,165,250,.08); color: var(--green);
       font-family: var(--mono); font-size: 9px;
       letter-spacing: .1em; text-transform: uppercase;
       padding: 3px 10px; border-radius: 2px;
-      border: 1px solid rgba(74,222,128,.15);
+      border: 1px solid rgba(96,165,250,.2);
     }
     .j-week {
       font-family: var(--mono); font-size: 9.5px;
@@ -509,7 +540,7 @@
     }
     .contact-glow {
       position: absolute; width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(74,222,128,.055) 0%, transparent 68%);
+      background: radial-gradient(circle, rgba(96,165,250,.07) 0%, transparent 68%);
       top: 50%; left: 50%; transform: translate(-50%,-50%);
       pointer-events: none; z-index: 0;
     }
@@ -541,7 +572,7 @@
       text-decoration: none; transition: background .2s, color .2s, border-color .2s;
       cursor: none; border: none; letter-spacing: .01em;
     }
-    .btn-primary { background: var(--green); color: #060c06; }
+    .btn-primary { background: var(--green); color: #07101f; }
     .btn-primary:hover { background: var(--gd); }
     .btn-outline {
       background: transparent; color: var(--fg3);
@@ -551,7 +582,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #070707; color: var(--fg3);
+      background: #070b12; color: var(--fg3);
       text-align: center; padding: 28px var(--g);
       font-family: var(--mono); font-size: 11px;
       letter-spacing: .08em; border-top: 1px solid var(--brd);
@@ -568,7 +599,7 @@
       display: flex; align-items: center; justify-content: center;
       transition: color .25s, border-color .25s, background .25s;
     }
-    #totop:hover { color: var(--green); border-color: var(--green); background: rgba(74,222,128,.06); }
+    #totop:hover { color: var(--green); border-color: var(--green); background: rgba(96,165,250,.08); }
 
     /* ── TOAST ── */
     #toast {
@@ -625,7 +656,7 @@
 
     /* ── CODE BLOCK HOVER ── */
     .code-block { transition: border-color .3s; }
-    .code-block:hover { border-color: rgba(74,222,128,.22); }
+    .code-block:hover { border-color: rgba(96,165,250,.28); }
 
     /* ── TOUCH FALLBACK ── */
     @media (hover: none) {
@@ -649,6 +680,7 @@
     }
     @media (max-width: 480px) {
       .skills-grid { grid-template-columns: 1fr; }
+      .learning-grid { grid-template-columns: 1fr; }
       .hero-actions { flex-direction: column; }
     }
   </style>
@@ -721,6 +753,8 @@
           </p>
           <div class="hero-actions">
             <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="Alfonso_Barte_Resume.pdf" class="btn btn-outline" download="Alfonso_Barte_Resume.pdf">Download Resume</a>
+            <a href="https://github.com/FONS061905" class="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
             <a href="#contact" class="btn btn-outline">Get in Touch</a>
           </div>
           <div class="hero-tags">
@@ -916,6 +950,36 @@
           <p class="sk-n">08</p>
           <h3>Tools &amp; Collaboration</h3>
           <p>Git and GitHub, teamwork, interface redesign, and PC hardware troubleshooting.</p>
+        </div>
+      </div>
+      <div class="learning-plan">
+        <p class="sl">Next Steps</p>
+        <h3>Backend Learning Roadmap</h3>
+        <p>
+          Building on my Supabase and PostgreSQL experience, I plan to strengthen my server-side skills
+          by creating and testing a small API from end to end.
+        </p>
+        <div class="learning-grid">
+          <div class="learning-item">
+            <span>01 · Server</span>
+            <h4>Node.js &amp; Express</h4>
+            <p>Learn routing, middleware, REST conventions, and consistent error handling by building an API.</p>
+          </div>
+          <div class="learning-item">
+            <span>02 · Data</span>
+            <h4>PostgreSQL Beyond CRUD</h4>
+            <p>Practice schema migrations, constraints, indexes, transactions, and reliable data updates.</p>
+          </div>
+          <div class="learning-item">
+            <span>03 · Security</span>
+            <h4>API Validation &amp; Access Control</h4>
+            <p>Validate incoming data and learn authentication, authorization, and safe secret management.</p>
+          </div>
+          <div class="learning-item">
+            <span>04 · Quality</span>
+            <h4>API Testing &amp; Deployment</h4>
+            <p>Write endpoint and integration tests, then deploy the API with environment-based configuration.</p>
+          </div>
         </div>
       </div>
     </div>
