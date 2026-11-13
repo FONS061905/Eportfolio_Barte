@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alfonso Barte | ePortfolio</title>
+  <title>Alfonso Rafael D. Barte | ePortfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -422,6 +422,39 @@
     .skill-card h3 { font-family: var(--sans); font-size: 15px; font-weight: 600; margin-bottom: 8px; }
     .skill-card p { font-size: 12.5px; color: var(--fg3); line-height: 1.62; }
 
+    /* ── PROJECTS ── */
+    #projects { background: var(--bg2); }
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 14px; position: relative; z-index: 1;
+    }
+    .project-card {
+      border: 1px solid var(--brd); border-radius: var(--r);
+      padding: 24px 22px; background: var(--bg3);
+      transition: background .25s, border-color .25s;
+    }
+    .project-card:hover { background: var(--bg4); border-color: var(--brd2); }
+    .project-meta {
+      display: flex; justify-content: space-between; gap: 12px;
+      margin-bottom: 14px; font-family: var(--mono);
+      font-size: 9px; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--green);
+    }
+    .project-meta span:last-child { color: var(--fg3); text-align: right; }
+    .project-card h3 {
+      font-family: var(--sans); font-size: 17px;
+      font-weight: 600; margin-bottom: 8px;
+    }
+    .project-card p { font-size: 12.5px; color: var(--fg3); line-height: 1.7; }
+    .project-stack {
+      display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px;
+    }
+    .project-stack span {
+      font-family: var(--mono); font-size: 8px;
+      letter-spacing: .08em; color: var(--fg2);
+      border: 1px solid var(--brd); border-radius: 3px; padding: 4px 8px;
+    }
+
     /* ── JOURNAL ── */
     #journal { background: var(--bg2); }
     .journal-wrap {
@@ -607,6 +640,7 @@
       .h-clip-i { font-size: clamp(56px, 16vw, 88px); }
       .about-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       #burger { display: flex; }
       #snav { display: none; }
@@ -629,6 +663,7 @@
     <div class="snd act" data-target="#hero" data-label="Home"></div>
     <div class="snd" data-target="#about" data-label="About"></div>
     <div class="snd" data-target="#skills" data-label="Skills"></div>
+    <div class="snd" data-target="#projects" data-label="Projects"></div>
     <div class="snd" data-target="#journal" data-label="Journal"></div>
     <div class="snd" data-target="#contact" data-label="Contact"></div>
   </aside>
@@ -642,8 +677,9 @@
     <ul class="nav-links">
       <li><a href="#about"><span class="nav-n">01</span>About</a></li>
       <li><a href="#skills"><span class="nav-n">02</span>Skills</a></li>
-      <li><a href="#journal"><span class="nav-n">03</span>Journal</a></li>
-      <li><a href="#contact"><span class="nav-n">04</span>Contact</a></li>
+      <li><a href="#projects"><span class="nav-n">03</span>Projects</a></li>
+      <li><a href="#journal"><span class="nav-n">04</span>Journal</a></li>
+      <li><a href="#contact"><span class="nav-n">05</span>Contact</a></li>
     </ul>
     <button id="burger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span>
@@ -656,9 +692,11 @@
     <div class="mob-divider"></div>
     <li><a href="#skills" class="mob-link"><span class="mn">02</span>Skills</a></li>
     <div class="mob-divider"></div>
-    <li><a href="#journal" class="mob-link"><span class="mn">03</span>Journal</a></li>
+    <li><a href="#projects" class="mob-link"><span class="mn">03</span>Projects</a></li>
     <div class="mob-divider"></div>
-    <li><a href="#contact" class="mob-link"><span class="mn">04</span>Contact</a></li>
+    <li><a href="#journal" class="mob-link"><span class="mn">04</span>Journal</a></li>
+    <div class="mob-divider"></div>
+    <li><a href="#contact" class="mob-link"><span class="mn">05</span>Contact</a></li>
   </nav>
 
   <!-- HERO -->
@@ -670,7 +708,7 @@
         <div class="hero-left">
           <div class="hero-eyebrow">
             <span class="eyebrow-dot"></span>
-            BS Information Technology · 3rd Year
+            BS Information Technology · 4th Year
           </div>
           <div class="hero-name">
             <div class="h-clip"><span class="h-clip-i">Alfonso</span></div>
@@ -678,11 +716,11 @@
           </div>
           <p class="hero-role"><span id="hRole">Web Developer</span></p>
           <p class="hero-desc">
-            Passionate IT student building modern software solutions through
-            code, curiosity, and hands-on learning at De La Salle Lipa.
+            I’m Alfonso Rafael D. Barte, a fourth-year IT student from San Jose, Batangas,
+            building practical web applications through collaborative projects and hands-on learning.
           </p>
           <div class="hero-actions">
-            <a href="#journal" class="btn btn-primary">View Journal</a>
+            <a href="#projects" class="btn btn-primary">View Projects</a>
             <a href="#contact" class="btn btn-outline">Get in Touch</a>
           </div>
           <div class="hero-tags">
@@ -703,13 +741,13 @@
           </div>
           <div class="cb-body">
             <div class="cl"><span class="ln">1</span><span class="ck">const</span><span class="cx"> </span><span class="cv">Alfonso</span><span class="cx"> = {</span></div>
-            <div class="cl"><span class="ln">2</span><span class="cx">  </span><span class="cp">role</span><span class="cx">: </span><span class="cs">"BSIT Student · 3rd Year"</span><span class="cx">,</span></div>
+            <div class="cl"><span class="ln">2</span><span class="cx">  </span><span class="cp">role</span><span class="cx">: </span><span class="cs">"BSIT Student · 4th Year"</span><span class="cx">,</span></div>
             <div class="cl"><span class="ln">3</span><span class="cx">  </span><span class="cp">school</span><span class="cx">: </span><span class="cs">"De La Salle Lipa"</span><span class="cx">,</span></div>
-            <div class="cl"><span class="ln">4</span><span class="cx">  </span><span class="cp">city</span><span class="cx">: </span><span class="cs">"Lipa, Batangas"</span><span class="cx">,</span></div>
-            <div class="cl"><span class="ln">5</span><span class="cx">  </span><span class="cp">goal</span><span class="cx">: </span><span class="cs">"Full-Stack Developer"</span><span class="cx">,</span></div>
+            <div class="cl"><span class="ln">4</span><span class="cx">  </span><span class="cp">location</span><span class="cx">: </span><span class="cs">"San Jose, Batangas"</span><span class="cx">,</span></div>
+            <div class="cl"><span class="ln">5</span><span class="cx">  </span><span class="cp">focus</span><span class="cx">: </span><span class="cs">"Web Applications"</span><span class="cx">,</span></div>
             <div class="cl"><span class="ln">6</span><span class="cx">  </span><span class="cp">skills</span><span class="cx">: [</span></div>
-            <div class="cl"><span class="ln">7</span><span class="cx">    </span><span class="cs">"HTML"</span><span class="cx">, </span><span class="cs">"CSS"</span><span class="cx">, </span><span class="cs">"JavaScript"</span><span class="cx">,</span></div>
-            <div class="cl"><span class="ln">8</span><span class="cx">    </span><span class="cs">"SQL"</span><span class="cx">, </span><span class="cs">"Git"</span><span class="cx">, </span><span class="cs">"Problem Solving"</span><span class="cx">,</span></div>
+            <div class="cl"><span class="ln">7</span><span class="cx">    </span><span class="cs">"JavaScript"</span><span class="cx">, </span><span class="cs">"React"</span><span class="cx">, </span><span class="cs">"Bootstrap"</span><span class="cx">,</span></div>
+            <div class="cl"><span class="ln">8</span><span class="cx">    </span><span class="cs">"Supabase"</span><span class="cx">, </span><span class="cs">"PostgreSQL"</span><span class="cx">, </span><span class="cs">"Git"</span><span class="cx">,</span></div>
             <div class="cl"><span class="ln">9</span><span class="cx">  ],</span></div>
             <div class="cl"><span class="ln">10</span><span class="cx">};</span></div>
             <div class="cl"><span class="ln">11</span></div>
@@ -728,23 +766,23 @@
   <!-- STATS STRIP -->
   <div class="stats-strip">
     <div class="stat">
-      <span class="stat-num" data-target="3">0</span>
-      <span class="stat-label">Years in BSIT</span>
-    </div>
-    <div class="stat-sep"></div>
-    <div class="stat">
-      <span class="stat-num" data-target="9">0</span>
-      <span class="stat-label">Journal Weeks</span>
+      <span class="stat-num" data-target="4">0</span>
+      <span class="stat-label">BSIT Year Level</span>
     </div>
     <div class="stat-sep"></div>
     <div class="stat">
       <span class="stat-num" data-target="6">0</span>
-      <span class="stat-label">Core Skills</span>
+      <span class="stat-label">Projects Showcased</span>
     </div>
     <div class="stat-sep"></div>
     <div class="stat">
-      <span class="stat-num" data-target="2026">2025</span>
-      <span class="stat-label">Academic Year</span>
+      <span class="stat-num" data-target="8">0</span>
+      <span class="stat-label">Skill Areas</span>
+    </div>
+    <div class="stat-sep"></div>
+    <div class="stat">
+      <span class="stat-num" data-target="3">0</span>
+      <span class="stat-label">Cisco NetAcad Certificates</span>
     </div>
   </div>
 
@@ -755,16 +793,17 @@
       <p class="sl">Who I Am</p>
       <h2 class="st"><span class="st-i">About Me</span></h2>
       <p class="section-intro">
-        3rd year BS Information Technology student at De La Salle Lipa, growing through
-        hands-on coursework, collaborative projects, and self-directed learning.
+        I’m Alfonso Rafael D. Barte, a 4th-year BS Information Technology student at De La Salle Lipa’s
+        College of Information Technology and Engineering. I’m from San Jose, Batangas, and enjoy building
+        useful web systems with my teams and collaborators.
       </p>
       <div class="about-grid">
         <div class="about-card">
           <div class="about-card-head">
-            <img src="profile.jpg" alt="Alfonso Barte" />
+            <img src="profile.jpg" alt="Alfonso Rafael D. Barte" />
             <div class="about-card-head-text">
-              <h3>Alfonso Barte</h3>
-              <span>BSIT · 3rd Year</span>
+              <h3>Alfonso Rafael D. Barte</h3>
+              <span>BSIT · 4th Year</span>
             </div>
           </div>
           <h3>Personal Details</h3>
@@ -774,15 +813,19 @@
           </div>
           <div class="info-row">
             <span class="info-label">Year Level</span>
-            <span class="info-value">3rd Year</span>
+            <span class="info-value">4th Year</span>
           </div>
           <div class="info-row">
             <span class="info-label">School</span>
             <span class="info-value">De La Salle Lipa</span>
           </div>
           <div class="info-row">
-            <span class="info-label">Academic Year</span>
-            <span class="info-value">2025 – 2026</span>
+            <span class="info-label">College</span>
+            <span class="info-value">College of Information Technology and Engineering</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Location</span>
+            <span class="info-value">San Jose, Batangas</span>
           </div>
           <div class="info-row">
             <span class="info-label">Email</span>
@@ -809,7 +852,11 @@
           </div>
           <div class="info-row">
             <span class="info-label">Portfolio Focus</span>
-            <span class="info-value">IT First Semester Journal 2026</span>
+            <span class="info-value">Web Applications &amp; Software Projects</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">GitHub</span>
+            <span class="info-value"><a href="https://github.com/FONS061905" target="_blank" rel="noopener noreferrer" style="color:var(--green)">FONS061905</a></span>
           </div>
           <div class="info-row">
             <span class="info-label">Status</span>
@@ -827,46 +874,106 @@
       <p class="sl">What I Know</p>
       <h2 class="st"><span class="st-i">Technical Skills</span></h2>
       <p class="section-intro">
-        Technologies and skills built through BS IT coursework, projects, and continuous self-study.
+        A practical toolkit shaped by capstone and team projects, coursework, and self-directed learning.
       </p>
       <div class="skills-grid">
         <div class="skill-card">
           <p class="sk-n">01</p>
           <h3>Web Development</h3>
-          <p>Building structured, responsive pages using HTML5, CSS3, and modern layout techniques.</p>
+          <p>Vanilla JavaScript, HTML, Bootstrap 5, and responsive interfaces for practical web applications.</p>
         </div>
         <div class="skill-card">
           <p class="sk-n">02</p>
-          <h3>JavaScript</h3>
-          <p>Adding interactivity and dynamic behavior to web apps using JavaScript fundamentals.</p>
+          <h3>React &amp; UI</h3>
+          <p>React projects using Fluent UI, including a blog app with JSON Server CRUD workflows and UI redesigns.</p>
         </div>
         <div class="skill-card">
           <p class="sk-n">03</p>
-          <h3>Programming</h3>
-          <p>Problem-solving through structured logic, algorithms, and data structure concepts.</p>
+          <h3>Backend &amp; Data</h3>
+          <p>Supabase, PostgreSQL, Row Level Security, Edge Functions, CRUD, and data dictionary design.</p>
         </div>
         <div class="skill-card">
           <p class="sk-n">04</p>
-          <h3>Database</h3>
-          <p>Designing and querying relational databases using SQL and data management principles.</p>
+          <h3>Testing &amp; Deployment</h3>
+          <p>Vercel deployment, structured test plans, UAT, and planning unit tests with Vitest.</p>
         </div>
         <div class="skill-card">
           <p class="sk-n">05</p>
-          <h3>Dev Tools</h3>
-          <p>Working with Git, VS Code, and browser dev tools for version control and debugging.</p>
+          <h3>Networking</h3>
+          <p>CCNA 2 topics, static routing, subnetting and CIDR, and network practice in Cisco Packet Tracer.</p>
         </div>
         <div class="skill-card">
           <p class="sk-n">06</p>
-          <h3>Collaboration</h3>
-          <p>Group projects, peer learning, and communicating technical concepts effectively.</p>
+          <h3>Python &amp; Cybersecurity</h3>
+          <p>Python Essentials 1 and 2, plus Cyber Threat Management through Cisco NetAcad.</p>
         </div>
+        <div class="skill-card">
+          <p class="sk-n">07</p>
+          <h3>Documentation &amp; Privacy</h3>
+          <p>Requirements, capstone writing, APA citations, and awareness of consent, data minimization, and retention under RA 10173.</p>
+        </div>
+        <div class="skill-card">
+          <p class="sk-n">08</p>
+          <h3>Tools &amp; Collaboration</h3>
+          <p>Git and GitHub, teamwork, interface redesign, and PC hardware troubleshooting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="bnum">03</div>
+    <div class="container">
+      <p class="sl">Selected Work</p>
+      <h2 class="st"><span class="st-i">Projects</span></h2>
+      <p class="section-intro">
+        Team, capstone, and independent work focused on useful systems, clear documentation, and thoughtful user experiences.
+      </p>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-meta"><span>Capstone · Co-developer</span><span>Lipa City</span></div>
+          <h3>ComTrike</h3>
+          <p>A web-based complaint management system for tricycle commuters, routing reports to the appropriate LTO or LGU office. Contributed multi-violation submissions, split-jurisdiction routing, data disposal requests, and retention expiry.</p>
+          <div class="project-stack"><span>Vanilla JS</span><span>Bootstrap 5</span><span>Supabase</span><span>Vercel</span></div>
+        </article>
+        <article class="project-card">
+          <div class="project-meta"><span>Team Project</span><span>In Development</span></div>
+          <h3>Barangay Incident Reporting</h3>
+          <p>A reporting system where residents can submit incidents and barangay officials can respond. The team is continuing to develop additional features.</p>
+          <div class="project-stack"><span>Web Application</span><span>Team Development</span></div>
+        </article>
+        <article class="project-card">
+          <div class="project-meta"><span>Family Business</span><span>UI Redesign</span></div>
+          <h3>Fedelicious Wings</h3>
+          <p>A restaurant POS and analytics system. Redesigning the Analytics, Dashboard, Transactions, Staff, and Payroll pages to improve the day-to-day interface.</p>
+          <div class="project-stack"><span>React</span><span>Fluent UI</span><span>POS &amp; Analytics</span></div>
+        </article>
+        <article class="project-card">
+          <div class="project-meta"><span>Independent Build</span><span>In Development</span></div>
+          <h3>Garcia’s Auto Supply</h3>
+          <p>A point-of-sale system being built for a local auto supply shop, with a focus on supporting its sales workflow.</p>
+          <div class="project-stack"><span>POS</span><span>Web Application</span></div>
+        </article>
+        <article class="project-card">
+          <div class="project-meta"><span>Documentation</span><span>Collaborative</span></div>
+          <h3>PalengkeHub</h3>
+          <p>Helping document a digital platform concept for Lipa City Public Market, including price transparency, stall discovery, and pre-ordering. Contributed to Chapter 2.</p>
+          <div class="project-stack"><span>Research</span><span>Requirements</span><span>Documentation</span></div>
+        </article>
+        <article class="project-card">
+          <div class="project-meta"><span>Earlier Coursework</span><span>Web &amp; Programming</span></div>
+          <h3>Foundational Projects</h3>
+          <p>Earlier work includes e-portfolio pages for myself and groupmates, a React blog app with JSON Server CRUD, and a peso savings calculator.</p>
+          <div class="project-stack"><span>React</span><span>JSON Server</span><span>JavaScript</span></div>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- JOURNAL -->
   <section id="journal">
-    <div class="bnum">03</div>
+    <div class="bnum">04</div>
     <div class="container">
       <p class="sl">Learning Reflections</p>
       <h2 class="st"><span class="st-i">IT First Semester Journal</span></h2>
@@ -971,7 +1078,7 @@
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="bnum">04</div>
+    <div class="bnum">05</div>
     <div class="container">
       <p class="sl">Get In Touch</p>
       <h2 class="st"><span class="st-i">Contact Me</span></h2>
@@ -983,6 +1090,7 @@
         </a>
         <div class="contact-actions">
           <a href="mailto:abartediokno06@gmail.com" class="btn btn-primary">Send Email</a>
+          <a href="https://github.com/FONS061905" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub Profile</a>
           <a href="ITFISEM - compiled journal 2026-docs.pdf" target="_blank" class="btn btn-outline">View Journal PDF</a>
         </div>
       </div>
@@ -991,7 +1099,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 <strong>Alfonso Barte</strong> · BS Information Technology · De La Salle Lipa</p>
+    <p>© 2026 <strong>Alfonso Rafael D. Barte</strong> · BS Information Technology · De La Salle Lipa</p>
   </footer>
 
   <script>
@@ -1023,7 +1131,7 @@
     });
 
     /* ── Side-dot active state ── */
-    ['#hero','#about','#skills','#journal','#contact'].forEach((id, i) => {
+    ['#hero','#about','#skills','#projects','#journal','#contact'].forEach((id, i) => {
       ScrollTrigger.create({
         trigger: id, start: 'top 55%', end: 'bottom 55%',
         onEnter:     () => activeDot(i),
@@ -1131,6 +1239,16 @@
         scramble(document.querySelector('#skills .sl'));
         gsap.from('#skills .st-i', { yPercent: 100, duration: 1.0, ease: 'expo.out', delay: .05 });
         gsap.from('.skill-card',   { y: 28, autoAlpha: 0, stagger: .07, duration: .65, rotation: 1, ease: 'power3.out', delay: .24 });
+      },
+    });
+
+    /* ── Projects ── */
+    ScrollTrigger.create({
+      trigger: '#projects', start: 'top 78%', once: true,
+      onEnter() {
+        scramble(document.querySelector('#projects .sl'));
+        gsap.from('#projects .st-i', { yPercent: 100, duration: 1.0, ease: 'expo.out', delay: .05 });
+        gsap.from('.project-card', { y: 28, autoAlpha: 0, stagger: .08, duration: .65, ease: 'power3.out', delay: .24 });
       },
     });
 
